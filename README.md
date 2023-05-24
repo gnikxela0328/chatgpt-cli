@@ -11,7 +11,7 @@ This also makes your subscription cheaper, since you can set an upper boundary f
 
 If you have issues with `_ctypes`, run `brew install libffi`
 
-You will likely need `sudo` access on your machine to run these scripts
+You will need `sudo` access on your machine to run these scripts
 
 ### Installation
 
