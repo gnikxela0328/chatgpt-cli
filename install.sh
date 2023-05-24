@@ -22,6 +22,19 @@ else
   echo Starting Setup ...
 fi
 
+# Grab .*sh profile
+shell=$(echo $SHELL)
+if [ "$shell" == "/bin/bash" ]; then
+    touch ~/.bashrc
+    CURR_PROFILE=".bashrc"
+elif [ "$shell" == "/bin/zsh" ]; then
+    touch ~/.zshrc
+    CURR_PROFILE=".zshrc"
+else; then
+    echo "Cannot determine shell profile. Modify this script and try again"
+    exit 1
+fi
+
 CURR_DIR=$(pwd)
 
 # Setup project
@@ -39,7 +52,7 @@ pip3 install -r requirements.txt
 deactivate
 
 # Create a shortcut
-touch $HOME/.zshrc
+touch $HOME/$CURR_PROFILE
 mkdir -p $HOME/.local/bin
 touch $HOME/.local/bin/chatgpt
 
@@ -53,7 +66,7 @@ for dir in $PATH; do
         break
     else
         # Add .local/bin to PATH 
-        echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/.zshrc
+        echo "export PATH=$HOME/.local/bin:$PATH" >> $HOME/$CURR_PROFILE
         break
     fi
 done
