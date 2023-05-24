@@ -6,6 +6,9 @@ This also makes your subscription cheaper, since you can set an upper boundary f
 
 **Note**: This tool requires `python 3.8` or higher to function.
 
+
+### Mac Users
+
 If you have issues with `_ctypes`, run `brew install libffi`
 
 You will likely need `sudo` access on your machine to run these scripts
