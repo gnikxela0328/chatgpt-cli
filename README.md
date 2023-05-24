@@ -22,7 +22,7 @@ chmod 700 install.sh
 ./install.sh
 ```
 
-#### or, setup manually:
+#### or, Install Manually:
 
 1. Create a file named `key.py` in the root of the project and provide your OpenAI API key.
 
