@@ -91,3 +91,6 @@ enter, ctrl + D
 ```
 
 To quit: press ctrl + C
+```
+ctrl + c
+```
