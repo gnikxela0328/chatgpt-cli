@@ -41,18 +41,30 @@ pip3 install -r requirements.txt
 deactivate
 ```
 
-3. Create a link to the tool and use directly from command line (macOS instructions)
+3. Create a link to the project and use directly from command line (macOS instructions)
 
-! Be sure to replace {PROJECT_FOLDER} to where you saved the project
+! Be sure to replace `{ PROJECT_FOLDER }` to where you saved the project
 
 ```
-touch $HOME/.zshrc
+shell=$(echo $SHELL)
+if [ "$shell" == "/bin/bash" ]; then
+    touch ~/.bashrc
+    profile=".bashrc"
+elif [ "$shell" == "/bin/zsh" ]; then
+    touch ~/.zshrc
+    profile=".zshrc"
+else; then
+    echo "Cannot determine shell profile. Modify this script and try again"
+    exit 1
+fi
+    
+touch $HOME/$profile
 mkdir -p $HOME/.local/bin
 touch $HOME/.local/bin/chatgpt
 
 launch_script="#!/bin/bash
-source {PROJECT_FOLDER}/.env/bin/activate
-python3 {PROJECT_FOLDER}/chat.py
+source { PROJECT_FOLDER }/.env/bin/activate
+python3 { PROJECT_FOLDER }/chat.py
 deactivate"
 
 echo "$launch_script" >> $HOME/.local/bin/chatgpt
