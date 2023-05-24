@@ -15,14 +15,14 @@ You will need `sudo` access on your machine to run these scripts
 
 ### Installation
 
+#### Quickstart
 Run the setup script
-
 ```
 chmod 700 install.sh
 ./install.sh
 ```
 
-or, setup manually:
+#### or, setup manually:
 
 1. Create a file named `key.py` in the root of the project and provide your OpenAI API key.
 
