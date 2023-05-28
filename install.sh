@@ -2,9 +2,10 @@
  
 # Setup script
 expected_origin=https://github.com/gnikxela0328/chatgpt-cli.git
+expected_origin2=https://github.com/gnikxela0328/chatgpt-cli
 current_origin=`git remote get-url origin 2>&1`;
 
-if [ "$expected_origin" != "$current_origin" ]; then
+if [ "$expected_origin" != "$current_origin" ] && [ "$expected_origin2" != $current_origin ]; then
   echo - Please run the script from the project root ...
   echo FAIL
   exit 1
