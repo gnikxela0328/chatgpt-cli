@@ -9,7 +9,7 @@ if [ "$expected_origin" != "$current_origin" ] && [ "$expected_origin2" != $curr
   echo - Please run the script from the project root ...
   echo FAIL
   exit 1
-else; then
+else
   echo - local origin matches expected $expected_origin
 
   current_folder=`pwd`
@@ -31,7 +31,7 @@ if [ "$shell" == "/bin/bash" ]; then
 elif [ "$shell" == "/bin/zsh" ]; then
     touch ~/.zshrc
     CURR_PROFILE=".zshrc"
-else; then
+else
     echo "Cannot determine shell profile. Modify this script and try again"
     exit 1
 fi
