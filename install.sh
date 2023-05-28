@@ -9,7 +9,7 @@ if [ "$expected_origin" != "$current_origin" ] && [ "$expected_origin2" != $curr
   echo - Please run the script from the project root ...
   echo FAIL
   exit 1
-else 
+else; then
   echo - local origin matches expected $expected_origin
 
   current_folder=`pwd`
